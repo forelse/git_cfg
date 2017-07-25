@@ -1,4 +1,5 @@
 
+let mapleader="," 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "
@@ -10,6 +11,23 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc,*.png,*.jpg,*.gif  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v\.(exe|so|dll)$'
 let g:ctrlp_extensions = ['funky']
+
+
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>f :CtrlPMRU<CR>
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+"narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+
 
 let NERDTreeIgnore=['\.pyc']
 " This line should not be removed as it ensures that various options are
@@ -230,7 +248,8 @@ imap jj <Esc>
 :nmap <silent> <F9> <ESC>:Tlist<RETURN>
 
 
-
+  
+map <leader>w :w<CR>
 
 set mouse=a
 set mouse=v
@@ -246,3 +265,11 @@ map <F2> :NERDTreeToggle<CR>
 
 
 
+"设置Grep插件
+nnoremap <silent> <F7> :Grep<CR>
+
+
+
+syntax enable
+set background=dark
+colorscheme solarized
