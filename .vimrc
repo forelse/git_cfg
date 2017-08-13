@@ -1,5 +1,44 @@
 
-let mapleader="," 
+set nocompatible                " be iMproved
+filetype off                    " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+"my Bundle here:
+"
+" original repos on github
+Bundle 'kien/ctrlp.vim'
+Bundle 'sukima/xmledit'
+Bundle 'sjl/gundo.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'klen/python-mode'
+Bundle 'Valloric/ListToggle'
+Bundle 'SirVer/ultisnips'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 't9md/vim-quickhl'
+" Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdcommenter'
+"..................................
+" vim-scripts repos
+Bundle 'YankRing.vim'
+Bundle 'vcscommand.vim'
+Bundle 'ShowPairs'
+Bundle 'SudoEdit.vim'
+Bundle 'EasyGrep'
+Bundle 'VOoM'
+Bundle 'VimIM'
+"..................................
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+"......................................
+filetype plugin indent on
+
+
+
+
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "
@@ -11,23 +50,6 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*.pyc,*.png,*.jpg,*.gif  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v\.(exe|so|dll)$'
 let g:ctrlp_extensions = ['funky']
-
-
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-map <leader>f :CtrlPMRU<CR>
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=15
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-"narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_syntax_highlight = 1
-let g:ctrlp_extensions = ['funky']
-
 
 let NERDTreeIgnore=['\.pyc']
 " This line should not be removed as it ensures that various options are
@@ -151,21 +173,12 @@ nmap wm :WMToggle<cr>
 
 
 
-
-
 " -- MiniBufferExplorer --
 let g:miniBufExplMapWindowNavVim = 1 "按下Ctrl+h/j/k/l，可以切换到当前窗口的上下左右窗口
 let g:miniBufExplMapWindowNavArrows = 1 "按下Ctrl+箭头，可以切换到当前窗口的上下左右窗口
 let g:miniBufExplMapCTabSwitchBufs = 1 "启用以下两个功能：Ctrl+tab移到下一个buffer并在当前窗口打开；Ctrl+Shift+tab移到上一个buffer并在当前窗口打开；ubuntu好像不支持
 "let g:miniBufExplMapCTabSwitchWindows = 1 "启用以下两个功能：Ctrl+tab移到下一个窗口；Ctrl+Shift+tab移到上一个窗口；ubuntu好像不支持
 let g:miniBufExplModSelTarget = 1 "不要在不可编辑内容的窗口（如TagList窗口）中打开选中的buffer
-
-
-
-
-
-
-
 
 
 "--fold setting--
@@ -244,13 +257,11 @@ endfunc
 "
 
 imap jj <Esc>
-
 :nmap <silent> <F9> <ESC>:Tlist<RETURN>
 
 
-  
-map <leader>w :w<CR>
 
+" 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
 set mouse=a
 set mouse=v
 set selection=exclusive
@@ -264,51 +275,45 @@ map <F2> :NERDTreeToggle<CR>
 
 
 
+set ignorecase "ignore case when searching"
+set wildmenu "wild char completion menu"
+set paste
+set cursorline
+"highlight CursorLine guibg=lightblue ctermbg=lightgray
+set cursorcolumn
+colorscheme morning
 
-"设置Grep插件
-nnoremap <silent> <F7> :Grep<CR>
+" 不要备份文件（根据自己需要取舍）
+set nobackup
+
+" 不要生成swap文件，当buffer被丢弃的时候隐藏它
+setlocal noswapfile
+set bufhidden=hide
 
 
 
-syntax enable
-set background=dark
-"colorscheme solarized
-colorschem evening
-"colorscheme desert
-"
-set nocompatible                " be iMproved
-filetype off                    " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" let Vundle manage Vundle
-Bundle 'gmarik/vundle'
-" "my Bundle here:
- "
- " original repos on github
- Bundle 'kien/ctrlp.vim'
- Bundle 'sukima/xmledit'
- Bundle 'sjl/gundo.vim'
- Bundle 'jiangmiao/auto-pairs'
- Bundle 'klen/python-mode'
- Bundle 'Valloric/ListToggle'
- Bundle 'SirVer/ultisnips'
- Bundle 'Valloric/YouCompleteMe'
- Bundle 'scrooloose/syntastic'
- Bundle 't9md/vim-quickhl'
- " Bundle 'Lokaltog/vim-powerline'
- Bundle 'scrooloose/nerdcommenter'
- "..................................
- " vim-scripts repos
- Bundle 'YankRing.vim'
- Bundle 'vcscommand.vim'
- Bundle 'ShowPairs'
- Bundle 'SudoEdit.vim'
- Bundle 'EasyGrep'
- Bundle 'VOoM'
- Bundle 'VimIM'
- "..................................
- " non github repos
- " Bundle 'git://git.wincent.com/command-t.git'
- "......................................
- filetype plugin indent on
- let g:ycm_global_ycm_extra_conf='/home/lee/.vim/.ycm_global_ycm_extra_conf.py'
+" 在状态行上显示光标所在位置的行号和列号
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+
+" 命令行（在状态行下）的高度，默认为1，这里是2
+set cmdheight=2
+" 通过使用: commands命令，告诉我们文件的哪一行被改变过
+set report=0
+
+" 在搜索时，输入的词句的逐字符高亮（类似firefox的搜索）
+set incsearch
+
+" 输入:set list命令是应该显示些啥？
+"set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol
+
+" 光标移动到buffer的顶部和底部时保持3行距离
+set scrolloff=3
+
+" 不要闪烁
+set novisualbell
+
+" 我的状态行显示的内容（包括文件类型和解码）
+set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+
