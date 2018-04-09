@@ -1,5 +1,6 @@
 
-let mapleader="," 
+let mapleader="<Space>"
+"let mapleader=","
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "
@@ -265,9 +266,9 @@ map <F2> :NERDTreeToggle<CR>
 syntax enable
 set background=dark
 "colorschem evening
-"colorscheme desert
+colorscheme desert
 "colorscheme solarized
-colorscheme morning
+"colorscheme morning
 "
 filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -311,9 +312,12 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
 Bundle 'iamcco/markdown-preview.vim'
 Bundle 'Tagbar'
+Bundle 'bronson/vim-trailing-whitespace'
+map <leader><space> :FixWhitespace<cr>
+
 "easygrep config
 "https://github.com/vim-scripts/EasyGrep/blob/master/doc/EasyGrep.txt
-let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2, 
+let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
 let g:EasyGrepCommand = 0  " Use vimgrep:0, grepprg:1
 let g:EasyGrepRecursive  = 1 " Recursive searching
 let g:EasyGrepIgnoreCase = 1 " not ignorecase:0
@@ -351,7 +355,7 @@ map <Leader><leader>l <Plug>(easymotion-lineforward)
 map <Leader><leader>. <Plug>(easymotion-repeat)
 
 
- 
+
 set ignorecase "ignore case when searching"
 set wildmenu "wild char completion menu"
 set paste
@@ -397,11 +401,11 @@ set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 "--------------------------------------------------------------------------
 "vim-airline
 "--------------------------------------------------------------------------
-"Plugin 'vim-airline'    
-let g:airline_theme="molokai" 
+"Plugin 'vim-airline'
+let g:airline_theme="molokai"
 
-"这个是安装字体后 必须设置此项" 
-let g:airline_powerline_fonts = 1   
+"这个是安装字体后 必须设置此项"
+let g:airline_powerline_fonts = 1
 
 "打开tabline功能,方便查看Buffer和切换,省去了minibufexpl插件
 let g:airline#extensions#tabline#enabled = 1
@@ -488,8 +492,8 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到�
 
 "imap jj <Esc>
 inoremap jk <esc>
-nmap <space> /
-vmap <space> /
+"nmap <space> /
+"vmap <space> /
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""实用设置
@@ -508,7 +512,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " 设置当文件被改动时自动载入
 set autoread
 " quickfix模式
-autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
+"autocmd FileType c,cpp map <buffer> <leader><space> :w<cr>:make<cr>
 
 
 
@@ -571,6 +575,7 @@ autocmd BufNewFile * normal G
 endfunc
 
 
+" space leader key
 
 
 "  ,+f  prev open file
