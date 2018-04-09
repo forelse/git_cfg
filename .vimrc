@@ -313,8 +313,9 @@ Bundle 'suan/vim-instant-markdown'
 Bundle 'iamcco/markdown-preview.vim'
 Bundle 'Tagbar'
 Bundle 'bronson/vim-trailing-whitespace'
-map <leader><space> :FixWhitespace<cr>
+"nnoremap<F1> :FixWhitespace<cr>
 
+nnoremap <Leader>fo :FixWhitespace<cr>
 "easygrep config
 "https://github.com/vim-scripts/EasyGrep/blob/master/doc/EasyGrep.txt
 let g:EasyGrepMode = 2     " All:0, Open Buffers:1, TrackExt:2,
@@ -575,20 +576,19 @@ autocmd BufNewFile * normal G
 endfunc
 
 
-" space leader key
 
 
-"  ,+f  prev open file
-"  ,+p  find  file
-",+,+w/b long jump
-",+w  save
-",vv grep
-",+cc /cu comments
+"  space +f  prev open file
+"  space +p  find  file
+"space+ space w/b long jump
+"space+w  save
+"space+vv grep
+"space+cc /cu comments
 
 "ctrlp-funky
 "<leader>fu 进入当前文件的函数列表搜索
 "<leader>fU 搜索当前光标下单词对应的函数
-
+" format space + fo
 
 
 
