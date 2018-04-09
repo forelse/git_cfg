@@ -1,5 +1,5 @@
 
-let mapleader="<Space>"
+let mapleader="\<Space>"
 "let mapleader=","
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
