@@ -264,11 +264,11 @@ map <F2> :NERDTreeToggle<CR>
 
 
 syntax enable
-set background=dark
+"set background=dark
 "colorschem evening
-colorscheme desert
+"colorscheme desert
 "colorscheme solarized
-"colorscheme morning
+colorscheme morning
 "
 filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -313,6 +313,7 @@ Bundle 'suan/vim-instant-markdown'
 Bundle 'iamcco/markdown-preview.vim'
 Bundle 'Tagbar'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'a.vim'
 "nnoremap<F1> :FixWhitespace<cr>
 
 nnoremap <Leader>fo :FixWhitespace<cr>
@@ -575,8 +576,12 @@ endif
 autocmd BufNewFile * normal G
 endfunc
 
+vmap <C-c> "+y
+"vmap <C-v> "+p
 
 
+"共享剪贴板
+set clipboard+=unnamed
 
 "  space +f  prev open file
 "  space +p  find  file
@@ -589,6 +594,25 @@ endfunc
 "<leader>fu 进入当前文件的函数列表搜索
 "<leader>fU 搜索当前光标下单词对应的函数
 " format space + fo
+
+" ctrl c = "+y
+" ctrl v = "+p
+
+"a.vim 头文件切换
+":A 头文件／源文件切换
+":AS 分割窗后并切换头/源文件(切割为上下两个窗口)
+"<Leader>ih 切换至光标所在文件*
+"<Leader>is 切换至光标所在处(单词所指)文件的配对文件(如光标所在处为foo.h，则切换至foo.c/foo.cpp...)
+
+
+
+
+
+map <f6> :FufFile<CR>
+
+"nnoremap <leader>ff :FufFile<CR>
+nnoremap <leader>fb :FufBuffer<CR>
+nnoremap <leader>ft :FufTag<CR>
 
 
 
