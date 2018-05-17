@@ -485,4 +485,12 @@ cat  ~/.config/terminator/config
 
 
 
+gstatus: fugitive
+https://blog.csdn.net/panderang/article/details/779138://blog.csdn.net/panderang/article/details/77913889
+
+Gstatus
+Gdiff
+-  相当于 git add
+Gread 相当于 git checkout 
+C commit 
 
