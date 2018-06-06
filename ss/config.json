@@ -1,0 +1,11 @@
+{
+    "server":"45.33.71.205",
+    "server_port":8888,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"",
+    "timeout":300,
+    "method":"rc4-md5",
+    "fast_open": false,
+    "workers": 1
+}

@@ -1,0 +1,4 @@
+INFO: loading config from /home/lee/config.json
+2018-06-06 11:21:18 INFO     loading libcrypto from libcrypto.so.1.0.0
+2018-06-06 11:21:18 INFO     starting local at 127.0.0.1:1080
+2018-06-06 11:21:18 ERROR    [Errno 98] Address already in use
