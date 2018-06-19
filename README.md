@@ -494,3 +494,7 @@ Gdiff
 Gread 相当于 git checkout 
 C commit 
 
+
+
+config
+cp config ~/.config/terminator/

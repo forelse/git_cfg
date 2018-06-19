@@ -23,11 +23,13 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
+
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 "narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_syntax_highlight = 1
 let g:ctrlp_extensions = ['funky']
+
 
 
 let NERDTreeIgnore=['\.pyc']
@@ -266,16 +268,21 @@ map <F2> :NERDTreeToggle<CR>
 syntax enable
 "set background=dark
 "colorschem evening
-"colorscheme desert
+colorscheme desert
 "colorscheme solarized
-colorscheme morning
+"colorscheme morning
 "
 filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " let Vundle manage Vundle
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
+
 Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'sukima/xmledit'
 Bundle 'sjl/gundo.vim'
@@ -314,6 +321,8 @@ Bundle 'iamcco/markdown-preview.vim'
 Bundle 'Tagbar'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'a.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'junegunn/fzf.vim'
 "nnoremap<F1> :FixWhitespace<cr>
 
 nnoremap <Leader>fo :FixWhitespace<cr>
@@ -576,6 +585,40 @@ endif
 autocmd BufNewFile * normal G
 endfunc
 
+
+
+let g:syntastic_error_symbol='>>'
+let g:syntastic_warning_symbol='>'
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_highlighting=1
+let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
+let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+let g:syntastic_html_checkers=['tidy', 'jshint']
+" 修改高亮的背景色, 适应主题
+highlight SyntasticErrorSign guifg=white guibg=black
+
+" to see error location list
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height = 5
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
+nnoremap <Leader>s :call ToggleErrors()<cr>
+" nnoremap <Leader>sn :lnext<cr>
+" nnoremap <Leader>sp :lprevious<cr>
+
+
+
+
+
+
 vmap <C-c> "+y
 "vmap <C-v> "+p
 
@@ -608,11 +651,11 @@ set clipboard+=unnamed
 
 
 
-map <f6> :FufFile<CR>
+"map <f6> :FufFile<CR>
 
-"nnoremap <leader>ff :FufFile<CR>
-nnoremap <leader>fb :FufBuffer<CR>
-nnoremap <leader>ft :FufTag<CR>
+nnoremap <leader>gf :FufFile<CR>
+nnoremap <leader>gb :FufBuffer<CR>
+nnoremap <leader>gt :FufTag<CR>
 
 
 
