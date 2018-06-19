@@ -266,7 +266,12 @@ alias pacman='sudo pacman-color'
 alias p='sudo pacman-color'
 alias y='yaourt'
 alias h='htop'
-alias vim='sudo vim'
+alias vim='vim'
+alias gs='git status'
+alias gm='git commit'
+alias ga='git add'
+alias gl='git pull'
+alias gh='git push'
 
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
