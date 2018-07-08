@@ -423,8 +423,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "设置切换Buffer快捷键"
-nnoremap <C-tab> :bn<CR>
-nnoremap <C-s-tab> :bp<CR>
+"nnoremap <C-tab> :bn<CR>
+"nnoremap <C-s-tab> :bp<CR>
+nnoremap <F7> :bn<CR>
+nnoremap <F8> :bp<CR>
 " 关闭状态显示空白符号计数
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
