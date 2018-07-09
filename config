@@ -15,13 +15,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#2d2d2d"
-    background_darkness = 0.85
-    background_image = None
-    copy_on_selection = True
-    cursor_color = "#99cc99"
     font = Ubuntu Mono 16
-    foreground_color = "#eee9e9"
+    use_system_font = False
     palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
     show_titlebar = False
-    use_system_font = False
